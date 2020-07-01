@@ -8,12 +8,19 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:component-scan
 		base-package="com.javaLive.beans" />
-
+	<!--
+	The values of lazy-init can be true and false. If lazy-init is true, then
+	that bean will be initialized when a request is made to bean. This bean
+	will not be initialized when the spring container is initialized and if
+	lazy-init is false then the bean will be initialized with the spring
+	container initialization.
+	-->
 	<bean lazy-init="true" id="book" class="com.javaLive.beans.Book"
 		init-method="myPostConstruct" destroy-method="myPreDestroy">
 		<property name="bookName" value="JavaLive. Java at its best." />
 	</bean>
-	<bean id="publisher" class="com.javaLive.beans.Publisher">
+	<bean lazy-init="true" id="publisher"
+		class="com.javaLive.beans.Publisher">
 		<property name="name" value="JavaLive.com" />
 	</bean>
 	<bean

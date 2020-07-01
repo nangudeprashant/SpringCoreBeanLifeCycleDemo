@@ -17,17 +17,17 @@ public class Book implements InitializingBean, DisposableBean, BeanFactoryAware,
 		System.out.println("---inside Book constructor---");
 	}
 	public void setBeanClassLoader(ClassLoader classLoader) {
-	       System.out.println("---BeanClassLoaderAware.setBeanClassLoader---");
+	       System.out.println("---BeanClassLoaderAware.setBeanClassLoader in Book.java---");
 	}	
 	public void setBeanName(String name) {
-   	       System.out.println("---BeanNameAware.setBeanName---");
+   	       System.out.println("---BeanNameAware.setBeanName in Book.java---");
 	}	
 	public void myPostConstruct() {
-	    	 System.out.println("---custom init-method---");
+	    	 System.out.println("---custom init-method in Book.java---");
 	}	
 	@PostConstruct
 	public void springPostConstruct() {
-	    	 System.out.println("---@PostConstruct---");
+	    	 System.out.println("---@PostConstruct in Book.java---");
 	}
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
 		System.out.println("---BeanFactoryAware.setBeanFactory---");
@@ -43,14 +43,14 @@ public class Book implements InitializingBean, DisposableBean, BeanFactoryAware,
 		System.out.println("setBookName: Book name has set.");		
 	}
 	public void myPreDestroy() {
-		System.out.println("---custom destroy-method---");
+		System.out.println("---custom destroy-method in Book.java---");
 	}
 	@PreDestroy
 	public void springPreDestroy() {
-		System.out.println("---@PreDestroy---");
+		System.out.println("---@PreDestroy in Book.java---");
 	}
 	public void destroy() throws Exception {
-		System.out.println("---DisposableBean.destroy---");
+		System.out.println("---DisposableBean.destroy in Book.java---");
 	}
 	@Override
 	protected void finalize() {
